@@ -111,6 +111,22 @@ Applications -
 - Cons: Very large number of parameters, leading to high computational cost and memory usage.
 - Use Case: Image classification and feature extraction.
 
+1.1 VGG16
+- Architecture: VGG16 has 16 weight layers, consisting of 13 convolutional layers and 3 fully connected layers. The convolutional layers use 3x3 filters with stride 1 and padding 1. The max-pooling layers use 2x2 filters with stride 2.
+- Layer Configuration:
+- Convolutional Layers: 13 layers
+- Fully Connected Layers: 3 layers
+- Max Pooling Layers: 5 layers
+- Total Number of Parameters: Approximately 138 million
+
+1.2 VGG19
+- Architecture: VGG19 is an extension of VGG16, with 19 weight layers, consisting of 16 convolutional layers and 3 fully connected layers. The convolutional layers use the same 3x3 filters with stride 1 and padding 1. The max-pooling layers use 2x2 filters with stride 2.
+- Layer Configuration:
+- Convolutional Layers: 16 layers
+- Fully Connected Layers: 3 layers
+- Max Pooling Layers: 5 layers
+- Total Number of Parameters: Approximately 143 million
+  
 2. GoogLeNet (Inception V1):
 
 - Pros: Efficient in terms of computational cost and memory usage due to inception modules.
@@ -135,8 +151,54 @@ Applications -
 - Cons: More complex design, requires compound scaling.
 - Use Case: Image classification, transfer learning.
 
-Choosing the Right CNN
-- Accuracy: If achieving the highest possible accuracy is crucial, consider architectures like ResNet, DenseNet, or EfficientNet.
-- Efficiency: For resource-constrained environments (e.g., mobile devices), MobileNet or EfficientNet is more suitable.
+6. Choosing the Right CNN
+- Accuracy: If achieving the highest possible accuracy is crucial, consider architectures like **ResNet, DenseNet, or EfficientNet.**
+- Efficiency: For resource-constrained environments (e.g., mobile devices), **MobileNet or EfficientNet**is more suitable.
 - Ease of Use: If you need a straightforward architecture for feature extraction or transfer learning, VGGNet or ResNet is a good choice.
+
+#### CNN vs R-CNN:
+
+![image](https://github.com/user-attachments/assets/16766ef5-674f-4bdd-b38d-cba279dd3a50)
+
+2. Training Process:
+
+CNN: CNNs are trained using labeled images with their corresponding ground truth class labels. The training process focuses on optimizing the network's weights to accurately classify images into predefined categories.
+
+R-CNN: R-CNN involves additional steps in the training process. It requires an initial pre-training step where a CNN is trained on a large-scale dataset (e.g., ImageNet) for image classification. Then, a region proposal algorithm (e.g., Selective Search) is used to generate potential object proposals, and these proposals are labeled with their corresponding object classes and refined bounding box coordinates. The CNN is fine-tuned on these labeled proposals to learn to classify and refine the proposed regions.
+
+3. Inference Speed:
+
+CNN: CNNs process images independently and do not consider objects' spatial information. They can be applied to images of any size, but they lack efficiency in localizing and detecting multiple objects within an image.
+
+R-CNN: R-CNN, especially its later variants like Fast R-CNN and Faster R-CNN, have improved the efficiency of object detection by introducing shared feature extraction and region proposal networks. By sharing the computation for multiple region proposals, R-CNN significantly reduces the inference time compared to CNN-based approaches.
+
+#### 2. R-CNN (Region Based Convolution Neural Network) Deep Learning - Selective search
+
+![image](https://github.com/user-attachments/assets/fbb84b26-6d68-4b99-a7da-536b55edadde)
+
+![image](https://github.com/user-attachments/assets/a507fa46-8338-4a57-8ace-e4e752c8112e)
+
+![image](https://github.com/user-attachments/assets/554cd1cd-4ebd-4724-b313-c34cd59beaf0)
+
+![image](https://github.com/user-attachments/assets/c74c3ff0-c839-406b-b358-530080f93540)
+
+
+- Use Case : This family is mainly used for object Detection + Segmentation.
+
+#### 3. Fast R-CNN (Region Based Convolution Neural Network) Deep Learning
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
