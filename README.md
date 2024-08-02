@@ -185,6 +185,30 @@ R-CNN: R-CNN, especially its later variants like Fast R-CNN and Faster R-CNN, ha
 
 - Use Case : This family is mainly used for object Detection + Segmentation.
 
+#### Three Stages of R-CNN
+
+The original R-CNN is indeed a three-stage process involving region proposal, feature extraction, and classification with bounding box regression. While effective, it is computationally intensive and slow due to the separate processing of each region proposal.
+
+1. Region Proposal:
+
+- Purpose: To generate a set of candidate regions in the image that are likely to contain objects.
+- Method: A region proposal algorithm, such as Selective Search, is used to generate around 2000 region proposals from the input image.
+- Output: These proposals are potential bounding boxes around objects in the image.
+
+2. Feature Extraction:
+
+- Purpose: To extract features from each region proposal.
+- Method: Each region proposal is resized to a fixed size and passed through a pre-trained CNN (such as AlexNet or VGG16) to extract a fixed-length feature vector.
+- Output: A feature vector representing each region proposal.
+
+3. Classification and Bounding Box Regression:
+   
+- Purpose: To classify the object within each region proposal and refine the bounding box.
+Method:
+- Classification: The feature vectors are fed into a set of class-specific linear SVM classifiers to predict the object class for each region proposal.
+- Bounding Box Regression: A regression model is used to refine the coordinates of the bounding box to better fit the object.
+- Output: The final object class and refined bounding box coordinates for each region proposal.
+
 #### 3. Fast R-CNN (Region Based Convolution Neural Network) Deep Learning
 
 
