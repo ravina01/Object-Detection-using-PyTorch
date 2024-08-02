@@ -1,7 +1,7 @@
 # Object Detection using PyTorch
 ---
 
-Object Detection for Computer Vision using Deep Learning with Python. Train and Deploy (Detectron2, Faster RCNN, YOLOv8)
+Object Detection for Computer Vision using Deep Learning with Python. Train and Deploy (RCNN Family)
 
 #### Whats Object Detection ?
 - The goal of Object detection is to train a Deep learning model which can look at the image of multiple objects to detect and localizing individual pbjects present in the image.
