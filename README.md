@@ -399,3 +399,5 @@ Example:
 #### Overview of RCNN Family-
 ![image](https://github.com/user-attachments/assets/47d3f975-d2a3-4d1e-87b9-67199c2de84d)
 
+ROI align - do not quantize propsed region cordinates, instead use floating point version of bbox, which is better aligned with original image. bilinear interpolation.
+we sample 4 points and then-> take bilinear interplation. it takes weighted avg based on neighboring cells. 
